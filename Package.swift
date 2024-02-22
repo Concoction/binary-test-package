@@ -16,26 +16,26 @@ let package = Package(
     .watchOS(.v6),
   ],
   
-  products: modules.map {
+  products: [], /*modules.map {
       .library(name: $0, type: .static, targets: [$0]
                + []
-    ) },
+    ) },*/
 
   targets: [
     .binaryTarget(
         name: "ModuleA",
         url: repo + "ModuleA.xcframework.zip",
-        checksum: "2ca8888cb33ce4d3afabc6c0de4bb53c99f110df35a6b3fed06a955087e11688"
+        checksum: "c8f8159682dcf824ec3259288521f212f46ed59269584862ff9d4064fc08b1e2"
     ),
     .binaryTarget(
         name: "ModuleB",
         url: repo + "ModuleB.xcframework.zip",
-        checksum: "183ab7923179e599d88f411258a973dbefdcfb8fe6aaf7ab1d96f7ddf48a9896"
+        checksum: "ef77d743c6dd2a6cbedb89a1af2ec4565a7b56c39a440a7d7652a8822a158b59"
     ),
     .binaryTarget(
         name: "ModuleC",
         url: repo + "ModuleC.xcframework.zip",
-        checksum: "6d6bdbdc7eeadf28ba3165111a727bc054f76b4256ca7a51ef81c4eeead1d7fa"
+        checksum: "824ccfcbae72f1828a019a18859b6166b4669d0949f1902eb20b552834e1d527"
     ),
   ]
 )

@@ -16,10 +16,7 @@ let package = Package(
     .watchOS(.v6),
   ],
   
-  products: modules.map {
-      .library(name: $0, type: .static, targets: [$0]
-               + []
-    ) },
+  products: [],
 
   targets: [
     .binaryTarget(

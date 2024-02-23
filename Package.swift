@@ -4,7 +4,7 @@ import CompilerPluginSupport
 import PackageDescription
 import Foundation
 
-let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.8/"
+let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.9/"
 let modules = ["ModuleA", "ModuleB", "ModuleC"]
 
 let package = Package(
@@ -16,26 +16,26 @@ let package = Package(
     .watchOS(.v6),
   ],
   
-  products: [], /*modules.map {
-      .library(name: $0, type: .static, targets: [$0]
-               + []
-    ) },*/
+  products: modules.map {
+      .library(name: $0, type: .static, targets: [$0, "Binder"]
+    ) },
 
   targets: [
+    .target(name: "Binder"),
     .binaryTarget(
         name: "ModuleA",
         url: repo + "ModuleA.xcframework.zip",
-        checksum: "ae809e64b440d82425797c07ebebf677bd46f4715fa937e0f72128245a298074"
+        checksum: "b3b52338afdb38ef40b76763573b4d6241494d603972ae7f4c090bee619aa2eb"
     ),
     .binaryTarget(
         name: "ModuleB",
         url: repo + "ModuleB.xcframework.zip",
-        checksum: "08d571d4436ba03935cd6f1bb1cf1a375258f18ede0efa5d9f9f991d96aa0a9e"
+        checksum: "3742a4545bdeaf9ae54d38e65a078612ab60a80eb7f6562ca3ad40ad66ff10ce"
     ),
     .binaryTarget(
         name: "ModuleC",
         url: repo + "ModuleC.xcframework.zip",
-        checksum: "5effc9849f9483c5dd717deed1ca75a7cd820b3db4d4c545db7498d922d81606"
+        checksum: "4ce940a19e7b575682b678320d338401afe3e7354a26031ab95473b02dfccec6"
     ),
   ]
 )

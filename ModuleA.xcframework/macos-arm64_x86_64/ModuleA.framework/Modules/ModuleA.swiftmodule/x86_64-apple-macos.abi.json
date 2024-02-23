@@ -1,0 +1,69 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "TypeDecl",
+        "name": "ClassA",
+        "printedName": "ClassA",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ClassA",
+                "printedName": "ModuleA.ClassA",
+                "usr": "s:7ModuleA6ClassAC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7ModuleA6ClassACACycfc",
+            "mangledName": "$s7ModuleA6ClassACACycfc",
+            "moduleName": "ModuleA",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "hello",
+            "printedName": "hello()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7ModuleA6ClassAC5helloyyF",
+            "mangledName": "$s7ModuleA6ClassAC5helloyyF",
+            "moduleName": "ModuleA",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:7ModuleA6ClassAC",
+        "mangledName": "$s7ModuleA6ClassAC",
+        "moduleName": "ModuleA",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}

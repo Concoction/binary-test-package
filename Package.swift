@@ -25,17 +25,17 @@ let package = Package(
     .binaryTarget(
         name: "ModuleA",
         url: repo + "ModuleA.xcframework.zip",
-        checksum: "9c6b9377f05d3d57442978feca9d00a61d1e8cd1c658cbff43614a1639c03b37"
+        checksum: "9a309a2ba1a6ee8bc0dc98974a6a962c71142bd5592d247cba0446c011389d0a"
     ),
     .binaryTarget(
         name: "ModuleB",
         url: repo + "ModuleB.xcframework.zip",
-        checksum: "02623652f7a8b61713a3e51c5c00e73d298ed686619131e9b5cced11d5142a98"
+        checksum: "847f87c02b62f062bab783f19ecb8ab6e0dfe41f0897bc8bd619e20c99f1ed21"
     ),
     .binaryTarget(
         name: "ModuleC",
         url: repo + "ModuleC.xcframework.zip",
-        checksum: "ce669dff58b7c80abff5e09a745035863e655798b08d44539039a0994c05d5b0"
+        checksum: "d4489fd0ba460a5068943094b018747fe82c5a0abf1c529454294f335360243e"
     ),
   ]
 )

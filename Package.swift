@@ -4,11 +4,11 @@ import CompilerPluginSupport
 import PackageDescription
 import Foundation
 
-let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.9005/"
+let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.9006/"
 let modules = ["ModuleA", "ModuleB", "ModuleC"]
 
 let package = Package(
-  name: "test-package",
+  name: "binary-test-package",
   platforms: [
     .iOS(.v13),
     .macOS(.v10_15),
@@ -25,17 +25,17 @@ let package = Package(
     .binaryTarget(
         name: "ModuleA",
         url: repo + "ModuleA.xcframework.zip",
-        checksum: "8d47f82b7e7247a92aa322c1d9d17a966d2e6c009bccc5c2215aca39f248d8de"
+        checksum: "e1074b247fb63bf76053ab800dee710f919bfbf19439af2e2ed92387e2913d6b"
     ),
     .binaryTarget(
         name: "ModuleB",
         url: repo + "ModuleB.xcframework.zip",
-        checksum: "ba9a9523fa8d6a98d5fd8b133c68aa6061b9e753f94126def579bfd19a61d96e"
+        checksum: "8c467e49b72b7493f26cccae56d081a2ef36c702685ff886d24858994c46004c"
     ),
     .binaryTarget(
         name: "ModuleC",
         url: repo + "ModuleC.xcframework.zip",
-        checksum: "b347eefed38df4e58c483be63ea056e99355805ffdc4b0293890530a20636681"
+        checksum: "b8b1699b76fffd5cdc4df82fb9ba5477953b42e464951b1a15ce0df3abbe4f63"
     ),
   ]
 )

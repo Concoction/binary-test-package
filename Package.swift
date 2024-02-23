@@ -4,7 +4,7 @@ import CompilerPluginSupport
 import PackageDescription
 import Foundation
 
-let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.5/"
+let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.6/"
 let modules = ["ModuleA", "ModuleB", "ModuleC"]
 
 let package = Package(
@@ -25,17 +25,17 @@ let package = Package(
     .binaryTarget(
         name: "ModuleA",
         url: repo + "ModuleA.xcframework.zip",
-        checksum: "00211c783e3cf2f30b88eed424697e0f4180b2f9b6029d5da6c58e7ed12ffb91"
+        checksum: "84cdca0d932bb8350cfeb6baf77ba7820236d25f7a4b524ed3225e9e82a5b1c7"
     ),
     .binaryTarget(
         name: "ModuleB",
         url: repo + "ModuleB.xcframework.zip",
-        checksum: "6675f2017c65fba3b4fe0b2c6ef3ab8d632a120af992567274bf91b98458c52e"
+        checksum: "027f10497328fc0395a61b19f04add20c9ec549c73f51c5229fd10f88cecc601"
     ),
     .binaryTarget(
         name: "ModuleC",
         url: repo + "ModuleC.xcframework.zip",
-        checksum: "bd12ef1b274e3d450d6a8366ee41f449377f514a8b214ab181cfc3ebf865c327"
+        checksum: "7e1017cc72a230d9eefcb3367a3dd914ab26572bc1c6d674e2a59517b664e74f"
     ),
   ]
 )

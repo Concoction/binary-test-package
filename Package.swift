@@ -2,40 +2,35 @@
 
 import CompilerPluginSupport
 import PackageDescription
-import Foundation
 
-let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.9010/"
+let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.9011/"
 let modules = ["ModuleA", "ModuleB", "ModuleC"]
 
 let package = Package(
   name: "test-package",
-  platforms: [
-    .iOS(.v13),
-    .macOS(.v10_15),
-    .tvOS(.v13),
-    .watchOS(.v6),
-  ],
-  
+
+
   products: modules.map {
-      .library(name: $0, type: .static, targets: [$0, "Binder"]
+      .library(name: $0, type: .static, targets: [$0, "_Binder"]
     ) },
 
+
   targets: [
-    .target(name: "Binder"),
+    .target(name: "_Binder"),
     .binaryTarget(
         name: "ModuleA",
         url: repo + "ModuleA.xcframework.zip",
-        checksum: "1700143252147e5ae4f9069ef1d1176ada02386643a77c579f71ccaa4b4be66d"
+        checksum: "763c01d527b8859d96a08b9b568f5372d26642272189f04e690016616653f0c3"
     ),
     .binaryTarget(
         name: "ModuleB",
         url: repo + "ModuleB.xcframework.zip",
-        checksum: "87e763a25dfd2b5e8f2c8cf8679970b11d444003c33eb1192963052a6dad1ee9"
+        checksum: "d0c97ad62d665f777b29e640a3d583894d18d682f8227c4dbd1b75eb8c103ff0"
     ),
     .binaryTarget(
         name: "ModuleC",
         url: repo + "ModuleC.xcframework.zip",
-        checksum: "8790e2737e450b0a41c88db97ae6889a1dd616708caba9aacf86d7fe625317b1"
+        checksum: "87d1c08af671c4971ed8189c6134f11b7ed00f8f954d510627a7e0f0575df1ac"
     ),
   ]
 )

@@ -3,14 +3,14 @@
 import CompilerPluginSupport
 import PackageDescription
 
-let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.9028/"
-let frameworks = [/*"ModuleC",*/ /*"test-package",*/ "ModuleA", "ModuleB"]
+let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.9029/"
+let frameworks = ["ModuleA", "ModuleC", "ModuleB", /*"test-package"*/]
 
 let package = Package(
     name: "test-package",
 
 
-    products: ["ModuleA", "ModuleB"].map {
+    products: ["ModuleA", "ModuleB", "ModuleC"].map {
       .library(name: $0, type: .static, targets: [$0, "test-package_Binder"]
     ) },
 
@@ -18,24 +18,24 @@ let package = Package(
     targets: [
         .target(name: "test-package_Binder", dependencies: frameworks.map { .target(name: $0) }),
         .binaryTarget(
-            name: "ModuleC",
-            url: repo + "ModuleC.xcframework.zip",
-            checksum: "f8574016cd4ba48ea324fc7e7b5c2b448da4171c5c1c6844a5a7a55d854a02d9"
-        ),
-        .binaryTarget(
-            name: "test-package",
-            url: repo + "test-package.xcframework.zip",
-            checksum: "d398a26efb50f25f7864cf45b650e954cc760e7609d4d616ab56c82bb29fef3a"
-        ),
-        .binaryTarget(
             name: "ModuleA",
             url: repo + "ModuleA.xcframework.zip",
-            checksum: "9653814e6bc4ca7042f030e9e98774b1de00016a258049aa81466158a3dea654"
+            checksum: "edf79a5a72553f821ab6e216cd11387320ae091231f06c9508edd96362782bd3"
+        ),
+        .binaryTarget(
+            name: "ModuleC",
+            url: repo + "ModuleC.xcframework.zip",
+            checksum: "a5c6936e688a35a282658f474ec0ce828a3722cc469a3658d83dcc3fdd76dbec"
         ),
         .binaryTarget(
             name: "ModuleB",
             url: repo + "ModuleB.xcframework.zip",
-            checksum: "c3c1bb28e0221b8f24f99398a89d8907ddfee6286a8fbb69bb4707faf108469f"
+            checksum: "20ccaffd77479afff53ae84095f9250cbd7b0a9c312ab23407bdd1d9f015c5b3"
+        ),
+        .binaryTarget(
+            name: "test-package",
+            url: repo + "test-package.xcframework.zip",
+            checksum: "8c1695653bceae970bfeade18e82173a1d4dd08c8c22f1df72e9e2bf11843fb6"
         ),
     ]
 )

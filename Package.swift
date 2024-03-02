@@ -3,39 +3,39 @@
 import CompilerPluginSupport
 import PackageDescription
 
-let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.9025/"
-let modules = ["ModuleC", "test-package", "ModuleA", "ModuleB"]
+let repo = "https://github.com/Concoction/binary-test-package/raw/1.0.9026/"
+let modules = ["test-package", "ModuleA", "ModuleB", "ModuleC"]
 
 let package = Package(
-  name: "test-package",
+    name: "test-package",
 
 
-  products: modules.map {
+    products: modules.map {
       .library(name: $0, type: .static, targets: [$0, "test-package_Binder"]
     ) },
 
 
-  targets: [
-    .target(name: "test-package_Binder"),
-    .binaryTarget(
-        name: "ModuleC",
-        url: repo + "ModuleC.xcframework.zip",
-        checksum: "5b5e06d45a3baf44189a3eae5c9c99462234e25c11cdf43d326c0cde501597c8"
-    ),
-    .binaryTarget(
-        name: "test-package",
-        url: repo + "test-package.xcframework.zip",
-        checksum: "e2b1dd7813c8a53f88ccaf6ac7c670f13d24d01ab5e51b183cb0dd29b382c667"
-    ),
-    .binaryTarget(
-        name: "ModuleA",
-        url: repo + "ModuleA.xcframework.zip",
-        checksum: "6f9a7ce031081777c34108d517a1fc65b0c7421c7039929ff03b6345aa82f43a"
-    ),
-    .binaryTarget(
-        name: "ModuleB",
-        url: repo + "ModuleB.xcframework.zip",
-        checksum: "29b4082a23e56aa623c7b793891599761ba1bb73bf2f39eca5c64b4d0d6e5fdd"
-    ),
-  ]
+    targets: [
+        .target(name: "test-package_Binder", dependencies: modules.map { .target(name: $0) }),
+        .binaryTarget(
+            name: "test-package",
+            url: repo + "test-package.xcframework.zip",
+            checksum: "1fb9d3024d16173fb0a30321f375ebda932fdd973e79e48549ccd7f2dc39a61e"
+        ),
+        .binaryTarget(
+            name: "ModuleA",
+            url: repo + "ModuleA.xcframework.zip",
+            checksum: "688eb01848e7492d5ce82a7119628b9aa60de0a96b576804f6159b274c324177"
+        ),
+        .binaryTarget(
+            name: "ModuleB",
+            url: repo + "ModuleB.xcframework.zip",
+            checksum: "0625237ee1e0d96782027a83ba551da4c25b4510148253ec4f4ce953777209f5"
+        ),
+        .binaryTarget(
+            name: "ModuleC",
+            url: repo + "ModuleC.xcframework.zip",
+            checksum: "86647272269862f275ebe2b051fc49a24cb7a27878e6f1d60cf53c01bffa9926"
+        ),
+    ]
 )
